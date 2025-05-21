@@ -14,6 +14,7 @@ def leer_contactos(nombre_archivo):
     return contactos
 
 # Función para escribir los contactos en el archivo CSV
+# Hecho por Lidia
 def guardar_contactos(nombre_archivo, contactos):
     with open(nombre_archivo, mode='w', newline='') as archivo:
         escritor = csv.writer(archivo)
@@ -21,11 +22,13 @@ def guardar_contactos(nombre_archivo, contactos):
         escritor.writerows(contactos)
 
 # Función para agregar un nuevo contacto
+# Hecho por Luca
 def agregar_contacto(contactos, nombre, telefono):
     contactos.append([nombre, telefono])
     print(f"Contacto {nombre} agregado.")
 
 # Función para mostrar todos los contactos
+# Hecho por Alan
 def mostrar_contactos(contactos):
     if not contactos:
         print("No hay contactos en la agenda.")
@@ -33,7 +36,8 @@ def mostrar_contactos(contactos):
     for contacto in contactos:
         print(f"Nombre: {contacto[0]}, Teléfono: {contacto[1]}")
 
-# Función para editar un contacto
+# Función para editar un contactoÇ
+# Hecho por Luca
 def editar_contacto(contactos, nombre, nuevo_telefono):
     for contacto in contactos:
         if contacto[0] == nombre:
@@ -42,7 +46,8 @@ def editar_contacto(contactos, nombre, nuevo_telefono):
             return
     print(f"No se encontró el contacto {nombre}.")
 
-# Función para eliminar un contacto
+# Función para la eliminación de un contacto
+# Hecho por Alan y Luca
 def eliminar_contacto(contactos, nombre):
     for contacto in contactos:
         if contacto[0] == nombre:
@@ -51,7 +56,8 @@ def eliminar_contacto(contactos, nombre):
             return
     print(f"No se encontró el contacto {nombre}.")
 
-# Función principal para gestionar la agenda
+# Función principal para la gestión de la agenda 
+# Hecho por Luca
 def gestionar_agenda():
     nombre_archivo = "agenda.csv"
     contactos = leer_contactos(nombre_archivo)
